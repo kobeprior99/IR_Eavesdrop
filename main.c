@@ -17,6 +17,7 @@ uint8_t recieve_array[256];
 //----------------------------------------------
 void main(void)
 {
+    //high i'm blanke
    uint8_t i;
    // initialize system
    SYSTEM_Initialize();
