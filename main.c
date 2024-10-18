@@ -22,6 +22,7 @@ uint8_t recieve_buffer[NUM_BYTES];
 uint8_t capture = false;
 // flag to control TMR1 ISR
 uint8_t transmit = false;
+// flag to make sure we don't overwrite buffer
 uint8_t bufferReady = false;
 
 //----------------------------------------------
@@ -33,9 +34,7 @@ void main(void)
     SYSTEM_Initialize();
     // RC1 is connected to the IR LED CCP2 is the pwm used at this pin
     EPWM2_LoadDutyValue(IRLED_OFF);
-
-    // have
-
+    // set up timer1ISR
     PIE1bits.TMR1IE = 0;
     TMR1_SetInterruptHandler(myTMR1ISR);
     PIE1bits.TMR1IE = 1;
@@ -44,6 +43,7 @@ void main(void)
     INTERRUPT_PeripheralInterruptEnable();
     INTERRUPT_GlobalInterruptEnable();
 
+    // infinite loop
     for (;;)
     {
         // check if holding capture button
@@ -93,6 +93,7 @@ void myTMR1ISR(void)
     static uint16_t sampleIndex = 0;
     static uint8_t bitIndex = 0;
     static uint8_t byteIndex = 0;
+
     switch (tmr1ISRstate)
     {
     case TX_IDLE:
@@ -110,25 +111,24 @@ void myTMR1ISR(void)
         break;
 
     case TX_SAMPLE:
-        // if sampling we don't want IRLED on.
-        EPWM2_LoadDutyValue(IRLED_OFF);
-        if (capture == false)
-        {
-            // if no longer capturing go to idle state
-            tmr1ISRstate = TX_IDLE;
-        }
-        else
-        {
-            if (sampleIndex < NUM_SAMPLES)
+        if (!bufferReady)
+        { // Ensure the buffer is not ready before sampling
+            EPWM2_LoadDutyValue(IRLED_OFF);
+            if (capture == false)
             {
-                // if capturing check the value of RCO and load into the recieve_buffer
-                setSample(sampleIndex++, PORTCbits.RC0);
+                tmr1ISRstate = TX_IDLE;
             }
             else
             {
-                // if you get past the number of samples jump to idle state
-                capture = false;
-                tmr1ISRstate = TX_DONE_SAMPLING;
+                if (sampleIndex < NUM_SAMPLES)
+                {
+                    setSample(sampleIndex++, PORTCbits.RC0);
+                }
+                else
+                {
+                    capture = false;
+                    tmr1ISRstate = TX_DONE_SAMPLING;
+                }
             }
         }
         break;
@@ -137,7 +137,7 @@ void myTMR1ISR(void)
         // TODO: Turn Green LED on to indicate done sampling
         // need another flag to indicate that we don't want to overwrite data in recieve_buffer
         bufferReady = true;
-        CAP_LED_SetHigh();
+        CAP_LED_SetLow();
         // clear bit and byte indexes for the transmit state
         bitIndex = 0;
         byteIndex = 0;
@@ -148,7 +148,7 @@ void myTMR1ISR(void)
     case TX_Transmit:
         // when we transmitting we can reasonably clear the constraint on writting to the buffer again
         bufferReady = false;
-        CAP_LED_SetLow();
+        CAP_LED_SetHigh();
         if (transmit == false)
         {
             // transmit false go to idle state
@@ -159,7 +159,7 @@ void myTMR1ISR(void)
             // transmit
             if (byteIndex < NUM_BYTES)
             {
-                if (bitIndex == 9)
+                if (bitIndex == 8)
                 {
                     // reset the bit index
                     // increment the byte
