@@ -52,6 +52,8 @@ void main(void)
             // button is being pressed
             if (bufferReady == false)
             {
+                while(PORTCbits.RC0 == 1);//wait till pull down at decoder
+                //this ^ means we are avoiding sampling useless data
                 capture = true;
             }
         }
