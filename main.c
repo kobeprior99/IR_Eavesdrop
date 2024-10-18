@@ -10,7 +10,8 @@
 
 // function prototypes
 void myTMR1ISR(void);
-
+//array that we will store samples in 
+uint8_t recieve_array[256];
 //----------------------------------------------
 // Main "function"
 //----------------------------------------------
