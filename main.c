@@ -52,8 +52,6 @@ void main(void)
             // button is being pressed
             if (bufferReady == false)
             {
-                while(PORTCbits.RC0 == 1);//wait till pull down at decoder
-                //this ^ means we are avoiding sampling useless data
                 capture = true;
             }
         }
@@ -78,9 +76,10 @@ void main(void)
 typedef enum
 {
     TX_IDLE,
+    TX_WAIT_PULLDOWN,
     TX_SAMPLE,
     TX_DONE_SAMPLING,
-    TX_Transmit
+    TX_TRANSMIT
 } tmr1ISRstate_t;
 
 //----------------------------------------------
@@ -104,14 +103,28 @@ void myTMR1ISR(void)
         // if in the idle state we want to turn IR LED off
         if (transmit == true)
         {
-            tmr1ISRstate = TX_Transmit; // move to the next state
+            tmr1ISRstate = TX_TRANSMIT; // move to the next state
         }
         else if (capture == true)
         {
-            tmr1ISRstate = TX_SAMPLE; // switch to sample state
+            tmr1ISRstate = TX_WAIT_PULLDOWN; // switch to sample state
         }
         break;
+    case TX_WAIT_PULLDOWN:
+        // if we get a pull down we can truly start sampling
+        if(capture == false){
+            tmr1ISRstate = TX_IDLE;
+        } else{
+            if (PORTCbits.RC0 == 0)
+            {
+                tmr1ISRstate = TX_SAMPLE;
+                //load the pull down the same as a sample
+                setSample(sampleIndex++, PORTCbits.RCO);
+            }//else do stay in this state
+        }
 
+
+        break;
     case TX_SAMPLE:
         if (!bufferReady)
         { // Ensure the buffer is not ready before sampling
@@ -139,7 +152,7 @@ void myTMR1ISR(void)
         // TODO: Turn Green LED on to indicate done sampling
         // need another flag to indicate that we don't want to overwrite data in recieve_buffer
         bufferReady = true;
-        CAP_LED_SetLow();
+        CAP_LED_SetLow();//current setup is an active low led so setting low turns led on
         // clear bit and byte indexes for the transmit state
         bitIndex = 0;
         byteIndex = 0;
@@ -147,10 +160,10 @@ void myTMR1ISR(void)
         tmr1ISRstate = TX_IDLE;
         break;
 
-    case TX_Transmit:
+    case TX_TRANSMIT:
         // when we transmitting we can reasonably clear the constraint on writting to the buffer again
         bufferReady = false;
-        CAP_LED_SetHigh();
+        CAP_LED_SetHigh();//current set up is an active low led so setting high turns the led off
         if (transmit == false)
         {
             // transmit false go to idle state
@@ -174,7 +187,7 @@ void myTMR1ISR(void)
             }
             else
             {
-                // if we get to the last index go ahead and reset
+                // if we get to the last index go ahead and reset so we retransmit what we get if the transmit button is held down
                 bitIndex = 0;
                 byteIndex = 0;
             }
@@ -190,6 +203,8 @@ void myTMR1ISR(void)
     TMR1_WriteTimer(0x10000 - SAMPLE_PERIOD); // each sample will be roughly 833us
     PIR1bits.TMR1IF = 0;                      // clear the TMR1 interrupt flag
 } // end Timer ISR
+
+
 
 // this code is sick!!
 
