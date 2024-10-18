@@ -10,7 +10,7 @@
 #define IRLED_OFF 0
 #define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
 #define NUM_SAMPLES 2048
-#define NUM_BYTES NUM_SAMPLES / 8
+#define NUM_BYTES 256
 // function prototypes
 void myTMR1ISR(void);
 void setSample(uint16_t index, uint8_t value);
@@ -194,8 +194,8 @@ void myTMR1ISR(void)
 // helper function to set the put the sample into the array
 void setSample(uint16_t index, uint8_t value)
 {
-    uint16_t byteIndex = index / 8; // find the corresponding byte
-    uint8_t bitIndex = index % 8;   // find the corresponding bit within that byte
+    uint16_t byteIndex = index >> 3; // find the corresponding byte using bit shifts is faster than division operator (divide by 8)
+    uint8_t bitIndex = index & 7;   // index &7 is like index % 8 which is faster for embedded system
     // we create a unique bit mask depending on the the bit index
     if (value == 1)
     {
