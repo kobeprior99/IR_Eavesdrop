@@ -11,6 +11,7 @@
 #define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
 #define NUM_SAMPLES 2048
 #define NUM_BYTES 256
+//boobs
 
 // function prototypes
 void myTMR1ISR(void);
