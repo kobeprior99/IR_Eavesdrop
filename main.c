@@ -8,7 +8,7 @@
 // define statements
 #define IRLED_ON 25
 #define IRLED_OFF 0
-#define SAMPLE_PERIOD 833 // sample rate close to 1200 baud for testing
+#define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
 #define NUM_SAMPLES 2048
 #define NUM_BYTES NUM_SAMPLES / 8
 // function prototypes
