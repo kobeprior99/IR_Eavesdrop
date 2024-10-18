@@ -12,7 +12,6 @@
 #define NUM_SAMPLES 2048
 #define NUM_BYTES 256
 
-
 // function prototypes
 void myTMR1ISR(void);
 void setSample(uint16_t index, uint8_t value);
@@ -87,8 +86,6 @@ typedef enum
 
 //----------------------------------------------
 // My TMR1 ISR to sample bits and transmit them
-// Format of the message
-// SRC DST MSG CHECKSUM NULL
 //----------------------------------------------
 void myTMR1ISR(void)
 {
@@ -101,6 +98,7 @@ void myTMR1ISR(void)
    switch (tmr1ISRstate)
    {
    case TX_IDLE:
+       //BLANE TODO: set OLED SCREEN TO SAY NOTHING
        // reset indecies for recieve buffer
        sampleIndex = 0;
        // if in the idle state we want to turn IR LED off
@@ -111,6 +109,8 @@ void myTMR1ISR(void)
        else if (capture == true)
        {
            tmr1ISRstate = TX_WAIT_PULLDOWN; // switch to sample state
+
+           //BLANE TODO: make oled output 'capturing'
        }
        break;
    case TX_WAIT_PULLDOWN:
@@ -156,6 +156,11 @@ void myTMR1ISR(void)
        // need another flag to indicate that we don't want to overwrite data in recieve_buffer
        bufferReady = true;
        CAP_LED_SetLow();//current setup is an active low led so setting low turns led on
+       
+       
+       //BLANE TODO: at this location display to the OLED: "READY"
+
+
        // clear bit and byte indexes for the transmit state
        bitIndex = 0;
        byteIndex = 0;
@@ -167,10 +172,17 @@ void myTMR1ISR(void)
        // when we transmitting we can reasonably clear the constraint on writting to the buffer again
        bufferReady = false;
        CAP_LED_SetHigh();//current set up is an active low led so setting high turns the led off
+       
+       //BLANE TODO: Here switch oled from 'ready' to 'transmitting
+
        if (transmit == false)
        {
            // transmit false go to idle state
            tmr1ISRstate = TX_IDLE;
+
+           //BLANE TODO: Here switch from oled dispaly outputing 'transmitting' to nothing
+
+
        }
        else
        {
