@@ -214,8 +214,8 @@ void myTMR1ISR(void)
        EPWM2_LoadDutyValue(IRLED_OFF);
 
    } // end switch
-
-   TMR1_WriteTimer(0x10000 - SAMPLE_PERIOD); // each sample will be roughly 833us
+   //more precise!
+   TMR1_WriteTimer(0x10000 - (SAMPLE_PERIOD - TMR0_ReadTimer())); // each sample will be roughly 833us
    PIR1bits.TMR1IF = 0;                      // clear the TMR1 interrupt flag
 } // end Timer ISR
 
