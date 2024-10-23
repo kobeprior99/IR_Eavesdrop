@@ -101,6 +101,8 @@ void myTMR1ISR(void)
        //BLANE TODO: set OLED SCREEN TO SAY NOTHING
        // reset indecies for recieve buffer
        sampleIndex = 0;
+       bitIndex = 0;
+       byteIndex = 0;
        // if in the idle state we want to turn IR LED off
        if (transmit == true)
        {
