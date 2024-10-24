@@ -49,13 +49,9 @@ void main(void)
    for (;;)
    {
        // check if holding capture button
-       if (CAPTURE_BUTTON_GetValue() == 0)
+       if (CAPTURE_BUTTON_GetValue() == 0 && bufferReady == false)
        {
-           // button is being pressed
-           if (bufferReady == false)
-           {
-               capture = true;
-           }
+            capture = true;
        }
        else
        {
@@ -133,14 +129,14 @@ void myTMR1ISR(void)
    case TX_SAMPLE:
        if (!bufferReady)
        { // Ensure the buffer is not ready before sampling
-           EPWM2_LoadDutyValue(IRLED_OFF);
+           EPWM2_LoadDutyValue(IRLED_OFF);//turn of the LED to make sure no interference
            if (capture == false)
            {
                tmr1ISRstate = TX_IDLE;
            }
            else
            {
-               if (sampleIndex < NUM_SAMPLES)
+               if (sampleIndex < 2048)
                {
                    setSample(sampleIndex++, PORTCbits.RC0);
                }
@@ -171,8 +167,6 @@ void myTMR1ISR(void)
        break;
 
    case TX_TRANSMIT:
-       // when we transmitting we can reasonably clear the constraint on writting to the buffer again
-       bufferReady = false;
        CAP_LED_SetHigh();//current set up is an active low led so setting high turns the led off
        
        //BLANE TODO: Here switch oled from 'ready' to 'transmitting
@@ -184,12 +178,11 @@ void myTMR1ISR(void)
 
            //BLANE TODO: Here switch from oled dispaly outputing 'transmitting' to nothing
 
-
        }
        else
        {
            // transmit
-           if (byteIndex < NUM_BYTES)
+           if (byteIndex < 256)
            {
                if (bitIndex == 8)
                {
@@ -207,6 +200,8 @@ void myTMR1ISR(void)
                // if we get to the last index go ahead and reset so we retransmit what we get if the transmit button is held down
                bitIndex = 0;
                byteIndex = 0;
+               // when we transmitting we can reasonably clear the constraint on writting to the buffer again
+               bufferReady = false;
            }
        }
        break;
@@ -218,7 +213,7 @@ void myTMR1ISR(void)
    } // end switch
    //more precise!
    TMR1_WriteTimer(0x10000 - (SAMPLE_PERIOD - TMR0_ReadTimer())); // each sample will be roughly 833us
-   PIR1bits.TMR1IF = 0;                      // clear the TMR1 interrupt flag
+   PIR1bits.TMR1IF = 0;// clear the TMR1 interrupt flag
 } // end Timer ISR
 
 
