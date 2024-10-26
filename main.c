@@ -6,7 +6,7 @@
 #pragma warning disable 751
 #pragma warning disable 1498
 // define statements
-#define IRLED_ON 25
+#define IRLED_ON 357 //corresponds to a 35% duty cycle
 #define IRLED_OFF 0
 #define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
 // might consider using a different sample rate just to be on the safe side.
@@ -96,7 +96,7 @@ void myTMR1ISR(void)
     {
     case TX_IDLE:
         // BLANE TODO: set OLED SCREEN TO SAY NOTHING
-        //  reset indecies for recieve buffer
+        // reset indecies for recieve buffer
         sampleIndex = 0;
         bitIndex = 0;
         byteIndex = 0;
