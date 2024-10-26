@@ -6,7 +6,7 @@
 #pragma warning disable 751
 #pragma warning disable 1498
 // define statements
-#define IRLED_ON 357 //corresponds to a 35% duty cycle
+#define IRLED_ON 90 //corresponds to a 35% duty cycle
 #define IRLED_OFF 0
 #define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
 // might consider using a different sample rate just to be on the safe side.
