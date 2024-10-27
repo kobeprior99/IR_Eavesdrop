@@ -8,7 +8,7 @@
 // define statements
 #define IRLED_ON 90 //corresponds to a 35% duty cycle
 #define IRLED_OFF 0
-#define SAMPLE_PERIOD 1666 // sample rate close to 1200 baud for testing
+#define SAMPLE_PERIOD 1666 // sample rate close to 9600 baud for testing
 // might consider using a different sample rate just to be on the safe side.
 #define NUM_SAMPLES 2048
 #define NUM_BYTES 256
@@ -36,7 +36,7 @@ void main(void)
     SYSTEM_Initialize();
     // RC1 is connected to the IR LED CCP2 is the pwm used at this pin
     EPWM2_LoadDutyValue(IRLED_OFF);
-    // turn of Capture LED
+    // turn off Capture LED
     CAP_LED_SetHigh();
     // set up timer1ISR
     PIE1bits.TMR1IE = 0;
@@ -96,7 +96,7 @@ void myTMR1ISR(void)
     {
     case TX_IDLE:
         // BLANE TODO: set OLED SCREEN TO SAY NOTHING
-        // reset indecies for recieve buffer
+        // reset indices for recieve buffer
         sampleIndex = 0;
         bitIndex = 0;
         byteIndex = 0;
@@ -170,7 +170,7 @@ void myTMR1ISR(void)
     case TX_TRANSMIT:
         CAP_LED_SetHigh(); // current set up is an active low led so setting high turns the led off
 
-        // BLANE TODO: Here switch oled from 'ready' to 'transmitting
+        // BLANE TODO: Here switch oled from 'ready' to 'transmitting'
 
         if (transmit == false)
         {
@@ -222,7 +222,7 @@ void myTMR1ISR(void)
 void setSample(uint16_t index, uint8_t value)
 {
     uint16_t byteIndex = index >> 3; // find the corresponding byte using bit shifts is faster than division operator (divide by 8)
-    uint8_t bitIndex = index & 7;    // index &7 is like index % 8 which is faster for embedded system
+    uint8_t bitIndex = index & 7;    // index & 7 is like index % 8 which is faster for embedded system
     // we create a unique bit mask depending on the the bit index
     if (value == 1)
     {
