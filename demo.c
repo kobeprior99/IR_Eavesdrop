@@ -38,7 +38,7 @@ void DispReceive(void) {
     
     // Blane addition 
     Oled_MemoryAccessControl(DISPLAY_0);
-    Oled_TextCenter("Receiving", 32, 32, Display.X, PIXEL_1);
+    Oled_TextCenter("Receiving", 0, 32, Display.X, PIXEL_1);
 // Would you like a full image?
 // Sure! but with inverse pixel.
 //    Oled_MemoryAccessControl(DISPLAY_0);
@@ -114,7 +114,7 @@ void DispNothing(void) {
     
     // Blane addition 
     Oled_MemoryAccessControl(DISPLAY_0);
-    Oled_TextCenter("", 32, 32, Display.X, PIXEL_1);
+    Oled_TextCenter("", 0, 32, Display.X, PIXEL_1);
 // Would you like a full image?
 // Sure! but with inverse pixel.
 //    Oled_MemoryAccessControl(DISPLAY_0);
@@ -190,7 +190,7 @@ void DispTransmitting(void) {
     
     // Blane addition 
     Oled_MemoryAccessControl(DISPLAY_0);
-    Oled_TextCenter("Send", 32, 32, Display.X, PIXEL_1);
+    Oled_TextCenter("Send", 0, 32, Display.X, PIXEL_1);
 // Would you like a full image?
 // Sure! but with inverse pixel.
 //    Oled_MemoryAccessControl(DISPLAY_0);
@@ -266,7 +266,7 @@ void DispReady(void) {
     
     // Blane addition 
     Oled_MemoryAccessControl(DISPLAY_0);
-    Oled_TextCenter("Ready", 32, 32, Display.X, PIXEL_1);
+    Oled_TextCenter("Ready", 0, 32, Display.X, PIXEL_1);
 // Would you like a full image?
 // Sure! but with inverse pixel.
 //    Oled_MemoryAccessControl(DISPLAY_0);
