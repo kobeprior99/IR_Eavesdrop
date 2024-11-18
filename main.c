@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "mcc_generated_files/mcc.h"
+#include "demo.h"
 // disable warnings
 #pragma warning disable 373
 #pragma warning disable 520
@@ -10,11 +11,11 @@
 #define IRLED_OFF 0
 #define SAMPLE_PERIOD 1666 // sample rate close to 9600 baud for testing
 // might consider using a different sample rate just to be on the safe side.
-#define NUM_SAMPLES 2048
-#define NUM_BYTES 256
+#define NUM_SAMPLES 1960
+#define NUM_BYTES 245
 
 // function prototypes
-void myTMR1ISR(void);
+void myTMR3ISR(void);
 void setSample(uint16_t index, uint8_t value);
 void sendSample(uint8_t recieveBuffer[], uint8_t currentByte, uint8_t currentBit);
 // array that we will store samples in
@@ -24,6 +25,8 @@ uint8_t recieve_buffer[NUM_BYTES];
 uint8_t capture = false;
 // flag to control TMR1 ISR
 uint8_t transmit = false;
+
+//flag ready
 // flag to make sure we don't overwrite buffer
 uint8_t bufferReady = false;
 
@@ -39,9 +42,9 @@ void main(void)
     // turn off Capture LED
     CAP_LED_SetHigh();
     // set up timer1ISR
-    PIE1bits.TMR1IE = 0;
-    TMR1_SetInterruptHandler(myTMR1ISR);
-    PIE1bits.TMR1IE = 1;
+    PIE2bits.TMR3IE = 0;
+    TMR3_SetInterruptHandler(myTMR3ISR);
+    PIE2bits.TMR3IE = 1;
 
     // allows interrupts to work:
     INTERRUPT_PeripheralInterruptEnable();
@@ -53,21 +56,29 @@ void main(void)
         if (CAPTURE_BUTTON_GetValue() == 0 && bufferReady == false)
         {
             capture = true;
+            DispReceive();
         }
         else
         {
             capture = false;
+            DispNothing();
         }
 
         // check if pressed transmit button has been pressed
         if (TRANSMIT_BUTTON_GetValue() == 0)
         {
             transmit = true;
+            DispTransmitting();
         }
         else
         {
             transmit = false;
+            DispNothing();
         }
+        if(bufferReady == true){
+            DispReady();
+        }
+
     } // end inf loop
 } // end main
 
@@ -79,23 +90,24 @@ typedef enum
     TX_SAMPLE,
     TX_DONE_SAMPLING,
     TX_TRANSMIT
-} tmr1ISRstate_t;
+} tmr3ISRstate_t;
 
 //----------------------------------------------
 // My TMR1 ISR to sample bits and transmit them
 //----------------------------------------------
-void myTMR1ISR(void)
+void myTMR3ISR(void)
 {
     // keep track of index in recieve buffer
-    static tmr1ISRstate_t tmr1ISRstate = TX_IDLE;
+    static tmr3ISRstate_t tmr3ISRstate = TX_IDLE;
     static uint16_t sampleIndex = 0;
     static uint8_t bitIndex = 0;
     static uint8_t byteIndex = 0;
 
-    switch (tmr1ISRstate)
+    switch (tmr3ISRstate)
     {
     case TX_IDLE:
         // BLANE TODO: set OLED SCREEN TO SAY NOTHING
+        //DispNothing();
         // reset indices for recieve buffer
         sampleIndex = 0;
         bitIndex = 0;
@@ -103,26 +115,27 @@ void myTMR1ISR(void)
         // if in the idle state we want to turn IR LED off
         if (transmit == true)
         {
-            tmr1ISRstate = TX_TRANSMIT; // move to the next state
+            tmr3ISRstate = TX_TRANSMIT; // move to the next state
         }
         else if (capture == true)
         {
-            tmr1ISRstate = TX_WAIT_PULLDOWN; // switch to sample state
+            tmr3ISRstate = TX_WAIT_PULLDOWN; // switch to sample state
 
             // BLANE TODO: make oled output 'capturing'
+            //DispReceive();
         }
         break;
     case TX_WAIT_PULLDOWN:
         // if we get a pull down we can truly start sampling
         if (capture == false)
         {
-            tmr1ISRstate = TX_IDLE;
+            tmr3ISRstate = TX_IDLE;
         }
         else
         {
             if (PORTCbits.RC0 == 0)
             {
-                tmr1ISRstate = TX_SAMPLE;
+                tmr3ISRstate = TX_SAMPLE;
                 // load the pull down the same as a sample
                 setSample(sampleIndex++, PORTCbits.RC0);
             } // else do stay in this state
@@ -135,7 +148,7 @@ void myTMR1ISR(void)
             EPWM2_LoadDutyValue(IRLED_OFF); // turn of the LED to make sure no interference
             if (capture == false)
             {
-                tmr1ISRstate = TX_IDLE;
+                tmr3ISRstate = TX_IDLE;
             }
             else
             {
@@ -146,7 +159,7 @@ void myTMR1ISR(void)
                 else
                 {
                     capture = false;
-                    tmr1ISRstate = TX_DONE_SAMPLING;
+                    tmr3ISRstate = TX_DONE_SAMPLING;
                 }
             }
         }
@@ -159,25 +172,25 @@ void myTMR1ISR(void)
         CAP_LED_SetLow(); // current setup is an active low led so setting low turns led on
 
         // BLANE TODO: at this location display to the OLED: "READY"
-
+        //DispReady();
         // clear bit and byte indexes for the transmit state
         bitIndex = 0;
         byteIndex = 0;
         // return to idle state
-        tmr1ISRstate = TX_IDLE;
+        tmr3ISRstate = TX_IDLE;
         break;
 
     case TX_TRANSMIT:
         CAP_LED_SetHigh(); // current set up is an active low led so setting high turns the led off
 
         // BLANE TODO: Here switch oled from 'ready' to 'transmitting'
-
+        //DispTransmitting();
         if (transmit == false)
         {
+            // BLANE TODO: Here switch from oled display outputting 'transmitting' to nothing
+            //DispNothing();
             // transmit false go to idle state
-            tmr1ISRstate = TX_IDLE;
-
-            // BLANE TODO: Here switch from oled dispaly outputing 'transmitting' to nothing
+            tmr3ISRstate = TX_IDLE;
         }
         else
         {
@@ -207,13 +220,14 @@ void myTMR1ISR(void)
         break;
 
     default:
-        tmr1ISRstate = TX_IDLE;
+        tmr3ISRstate = TX_IDLE;
+        //DispNothing();
         EPWM2_LoadDutyValue(IRLED_OFF);
 
     } // end switch
     // more precise!
-    TMR1_WriteTimer(0x10000 - (SAMPLE_PERIOD - TMR1_ReadTimer())); // each sample will be roughly 104us corresponding with 9600 baud
-    PIR1bits.TMR1IF = 0;                                           // clear the TMR1 interrupt flag
+    TMR3_WriteTimer(0x10000 - (SAMPLE_PERIOD - TMR3_ReadTimer())); // each sample will be roughly 104us corresponding with 9600 baud
+    PIR2bits.TMR3IF = 0;                                           // clear the TMR1 interrupt flag
 } // end Timer ISR
 
 // this code is sick!!
