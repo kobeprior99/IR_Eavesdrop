@@ -5,11 +5,11 @@
 #define SCREEN_HEIGHT 64
 
 // Define pin connections
-#define OLED_CS     LATD0
-#define OLED_DC     LATD1
-#define OLED_RST    LATD2
-#define BUTTON1_PIN PORTAbits.RA2  // Assume button 1 is connected to RB0
-#define BUTTON2_PIN PORTAbits.RA3  // Assume button 2 is connected to RB1
+#define OLED_CS     LATRC3
+#define OLED_DC     LATRC4
+#define OLED_RST    LATMCLR
+#define BUTTON1_PIN PORTAbits.RA2  // Assume button 1 is connected to RA2
+#define BUTTON2_PIN PORTAbits.RA3  // Assume button 2 is connected to RA3
 
 void SPI_Init() {
     // Initialize SPI module to use FOSC/4
