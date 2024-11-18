@@ -1,0 +1,1074 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F25K22 ]
+[d frameptr 4065 ]
+"72 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[e E358 . `uc
+SPI1_DEFAULT 0
+]
+"23 C:\Users\blane\MPLABXProjects\oled_test.X\demo.c
+[e E6277 . `uc
+SPI1_DEFAULT 0
+]
+"101 C:\Users\blane\MPLABXProjects\oled_test.X\main.c
+[e E6161 . `uc
+TX_IDLE 0
+TX_WAIT_PULLDOWN 1
+TX_SAMPLE 2
+TX_DONE_SAMPLING 3
+TX_TRANSMIT 4
+]
+"1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"19 C:\Users\blane\MPLABXProjects\oled_test.X\demo.c
+[v _DispReceive DispReceive `(v  1 e 1 0 ]
+"95
+[v _DispNothing DispNothing `(v  1 e 1 0 ]
+"171
+[v _DispTransmitting DispTransmitting `(v  1 e 1 0 ]
+"247
+[v _DispReady DispReady `(v  1 e 1 0 ]
+"36 C:\Users\blane\MPLABXProjects\oled_test.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"98
+[v _myTMR3ISR myTMR3ISR `(v  1 e 1 0 ]
+"236
+[v _setSample setSample `(v  1 e 1 0 ]
+"252
+[v _sendSample sendSample `(v  1 e 1 0 ]
+"64 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/epwm2.c
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
+"90
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+[v i2_EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+"52 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"50 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"63
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+"72
+[v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
+"92
+[v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
+"113
+[v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
+"63 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"114
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"62 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr3.c
+[v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
+"105
+[v _TMR3_ReadTimer TMR3_ReadTimer `(us  1 e 2 0 ]
+"121
+[v _TMR3_WriteTimer TMR3_WriteTimer `(v  1 e 1 0 ]
+"158
+[v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
+"172
+[v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
+"176
+[v _TMR3_DefaultInterruptHandler TMR3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"29 C:\Users\blane\MPLABXProjects\oled_test.X\oled.c
+[v _Oled_Init Oled_Init `(v  1 e 1 0 ]
+"64
+[v _Oled_MemoryAccessControl Oled_MemoryAccessControl `(v  1 e 1 0 ]
+"88
+[v _Oled_SetFont Oled_SetFont `(v  1 e 1 0 ]
+"105
+[v _Oled_WriteChar Oled_WriteChar `(v  1 e 1 0 ]
+"163
+[v _Oled_TextWidth Oled_TextWidth `(us  1 e 2 0 ]
+"252
+[v _Oled_TextCenter Oled_TextCenter `(v  1 e 1 0 ]
+"368
+[v _Oled_ScrollArea Oled_ScrollArea `(v  1 e 1 0 ]
+"451
+[v _Oled_FillScreen Oled_FillScreen `(v  1 e 1 0 ]
+"470
+[v _Oled_FillArea Oled_FillArea `(v  1 e 1 0 ]
+"506
+[v _Oled_Line Oled_Line `(v  1 e 1 0 ]
+"562
+[v _Oled_Pixel Oled_Pixel `(uc  1 e 1 0 ]
+"610
+[v _Oled_WriteArea Oled_WriteArea `(v  1 e 1 0 ]
+"766
+[v _Oled_Reset Oled_Reset `(v  1 e 1 0 ]
+"777
+[v _Oled_Command Oled_Command `(v  1 e 1 0 ]
+"812
+[v _Oled_WritePage Oled_WritePage `(v  1 e 1 0 ]
+"861
+[v _Oled_SetPointer Oled_SetPointer `(v  1 e 1 0 ]
+"875
+[v _Oled_SetContrast Oled_SetContrast `(v  1 e 1 0 ]
+"885
+[v _Oled_Driver Oled_Driver `(v  1 e 1 0 ]
+"19 C:\Users\blane\MPLABXProjects\oled_test.X\time_delay.c
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+"52 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f25k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"97
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"147
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+[s S1756 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 C2TSEL 1 0 :2:3 
+`uc 1 . 1 0 :1:5 
+`uc 1 C3TSEL 1 0 :2:6 
+]
+"1319
+[s S1762 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C2TSEL0 1 0 :1:3 
+`uc 1 C2TSEL1 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 C3TSEL0 1 0 :1:6 
+`uc 1 C3TSEL1 1 0 :1:7 
+]
+[u S1771 . 1 `S1756 1 . 1 0 `S1762 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES1771  1 e 1 @3913 ]
+"2613
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+"2714
+[v _PSTR2CON PSTR2CON `VEuc  1 e 1 @3939 ]
+"2854
+[v _ECCP2AS ECCP2AS `VEuc  1 e 1 @3940 ]
+"3096
+[v _PWM2CON PWM2CON `VEuc  1 e 1 @3941 ]
+"3166
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @3942 ]
+"3255
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
+"3275
+[v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
+[s S954 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"6260
+[s S963 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+]
+[s S970 . 1 `uc 1 C12IN0M 1 0 :1:0 
+`uc 1 C12IN1M 1 0 :1:1 
+`uc 1 C2INP 1 0 :1:2 
+`uc 1 C1INP 1 0 :1:3 
+`uc 1 C1OUT 1 0 :1:4 
+`uc 1 C2OUT 1 0 :1:5 
+]
+[s S977 . 1 `uc 1 C12IN0N 1 0 :1:0 
+`uc 1 C12IN1N 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 SS 1 0 :1:5 
+]
+[s S984 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS 1 0 :1:5 
+]
+[s S987 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFN 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SRQ 1 0 :1:4 
+`uc 1 nSS 1 0 :1:5 
+]
+[s S993 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CVREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CCP5 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S999 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACOUT 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S1004 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1 1 0 :1:5 
+]
+[s S1007 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS1 1 0 :1:5 
+]
+[s S1010 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nSS1 1 0 :1:5 
+]
+[s S1013 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRNQ 1 0 :1:5 
+]
+[s S1016 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S1020 . 1 `S954 1 . 1 0 `S963 1 . 1 0 `S970 1 . 1 0 `S977 1 . 1 0 `S984 1 . 1 0 `S987 1 . 1 0 `S993 1 . 1 0 `S999 1 . 1 0 `S1004 1 . 1 0 `S1007 1 . 1 0 `S1010 1 . 1 0 `S1013 1 . 1 0 `S1016 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1020  1 e 1 @3968 ]
+[s S189 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"6919
+[s S1120 . 1 `uc 1 T1OSO 1 0 :1:0 
+`uc 1 T1OSI 1 0 :1:1 
+`uc 1 T5CKI 1 0 :1:2 
+`uc 1 SCK 1 0 :1:3 
+`uc 1 SDI 1 0 :1:4 
+`uc 1 SDO 1 0 :1:5 
+`uc 1 TX 1 0 :1:6 
+`uc 1 RX 1 0 :1:7 
+]
+[s S1129 . 1 `uc 1 P2B 1 0 :1:0 
+`uc 1 P2A 1 0 :1:1 
+`uc 1 P1A 1 0 :1:2 
+`uc 1 SCL 1 0 :1:3 
+`uc 1 SDA 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK 1 0 :1:6 
+`uc 1 DT 1 0 :1:7 
+]
+[s S1138 . 1 `uc 1 T1CKI 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 CCP1 1 0 :1:2 
+`uc 1 SCK1 1 0 :1:3 
+`uc 1 SDI1 1 0 :1:4 
+`uc 1 SDO1 1 0 :1:5 
+`uc 1 TX1 1 0 :1:6 
+`uc 1 RX1 1 0 :1:7 
+]
+[s S1147 . 1 `uc 1 T3CKI 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 CTPLS 1 0 :1:2 
+`uc 1 SCL1 1 0 :1:3 
+`uc 1 SDA1 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK1 1 0 :1:6 
+`uc 1 DT1 1 0 :1:7 
+]
+[s S1156 . 1 `uc 1 T3G 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 AN14 1 0 :1:2 
+`uc 1 AN15 1 0 :1:3 
+`uc 1 AN16 1 0 :1:4 
+`uc 1 AN17 1 0 :1:5 
+`uc 1 AN18 1 0 :1:6 
+`uc 1 AN19 1 0 :1:7 
+]
+[s S1165 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CCP3 1 0 :1:6 
+`uc 1 P3B 1 0 :1:7 
+]
+[s S1169 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 P3A 1 0 :1:6 
+]
+[s S1172 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[u S1176 . 1 `S189 1 . 1 0 `S1120 1 . 1 0 `S1129 1 . 1 0 `S1138 1 . 1 0 `S1147 1 . 1 0 `S1156 1 . 1 0 `S1165 1 . 1 0 `S1169 1 . 1 0 `S1172 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1176  1 e 1 @3970 ]
+"7244
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S559 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"7271
+[s S568 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S577 . 1 `S559 1 . 1 0 `S568 1 . 1 0 ]
+[v _LATAbits LATAbits `VES577  1 e 1 @3977 ]
+"7356
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"7468
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+[s S514 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"7495
+[s S523 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S532 . 1 `S514 1 . 1 0 `S523 1 . 1 0 ]
+[v _LATCbits LATCbits `VES532  1 e 1 @3979 ]
+"7580
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"7802
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8024
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S180 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"8056
+[u S198 . 1 `S180 1 . 1 0 `S189 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES198  1 e 1 @3988 ]
+"8267
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S269 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"8716
+[s S277 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S282 . 1 `S269 1 . 1 0 `S277 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES282  1 e 1 @3998 ]
+[s S880 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 C2IE 1 0 :1:5 
+`uc 1 C1IE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"8874
+[s S889 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+]
+[s S893 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CMIE 1 0 :1:6 
+]
+[u S896 . 1 `S880 1 . 1 0 `S889 1 . 1 0 `S893 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES896  1 e 1 @4000 ]
+[s S1274 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 HLVDIF 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 C2IF 1 0 :1:5 
+`uc 1 C1IF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"8960
+[s S1283 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIF 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+]
+[s S1287 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CMIF 1 0 :1:6 
+]
+[u S1290 . 1 `S1274 1 . 1 0 `S1283 1 . 1 0 `S1287 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1290  1 e 1 @4001 ]
+"10691
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+[s S1853 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T3SYNC 1 0 :1:2 
+]
+"10724
+[s S1856 . 1 `uc 1 TMR3ON 1 0 :1:0 
+`uc 1 T3RD16 1 0 :1:1 
+`uc 1 nT3SYNC 1 0 :1:2 
+`uc 1 T3SOSCEN 1 0 :1:3 
+`uc 1 T3CKPS 1 0 :2:4 
+`uc 1 TMR3CS 1 0 :2:6 
+]
+[s S1863 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T3OSCEN 1 0 :1:3 
+`uc 1 T3CKPS0 1 0 :1:4 
+`uc 1 T3CKPS1 1 0 :1:5 
+`uc 1 TMR3CS0 1 0 :1:6 
+`uc 1 TMR3CS1 1 0 :1:7 
+]
+[s S1870 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN3 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 RD163 1 0 :1:7 
+]
+[u S1875 . 1 `S1853 1 . 1 0 `S1856 1 . 1 0 `S1863 1 . 1 0 `S1870 1 . 1 0 ]
+[v _T3CONbits T3CONbits `VES1875  1 e 1 @4017 ]
+"10799
+[v _TMR3 TMR3 `VEus  1 e 2 @4018 ]
+"10806
+[v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
+"10826
+[v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
+"10846
+[v _T3GCON T3GCON `VEuc  1 e 1 @4020 ]
+[s S1903 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T3GGO_NOT_DONE 1 0 :1:3 
+]
+"10876
+[s S1906 . 1 `uc 1 T3GSS 1 0 :2:0 
+`uc 1 T3GVAL 1 0 :1:2 
+`uc 1 T3GGO_nDONE 1 0 :1:3 
+`uc 1 T3GSPM 1 0 :1:4 
+`uc 1 T3GTM 1 0 :1:5 
+`uc 1 T3GPOL 1 0 :1:6 
+`uc 1 TMR3GE 1 0 :1:7 
+]
+[s S1914 . 1 `uc 1 T3GSS0 1 0 :1:0 
+`uc 1 T3GSS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T3G_DONE 1 0 :1:3 
+]
+[s S1919 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T3GGO 1 0 :1:3 
+]
+[u S1922 . 1 `S1903 1 . 1 0 `S1906 1 . 1 0 `S1914 1 . 1 0 `S1919 1 . 1 0 ]
+[v _T3GCONbits T3GCONbits `VES1922  1 e 1 @4020 ]
+"12401
+[v _T2CON T2CON `VEuc  1 e 1 @4026 ]
+[s S1708 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"12422
+[s S1712 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S1720 . 1 `S1708 1 . 1 0 `S1712 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1720  1 e 1 @4026 ]
+"12472
+[v _PR2 PR2 `VEuc  1 e 1 @4027 ]
+"12492
+[v _TMR2 TMR2 `VEuc  1 e 1 @4028 ]
+"12952
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @4037 ]
+"13306
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
+[s S220 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"13341
+[s S226 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S231 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S240 . 1 `S220 1 . 1 0 `S226 1 . 1 0 `S231 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES240  1 e 1 @4038 ]
+"13544
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
+"14174
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
+"14428
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
+"14742
+[v _T1GCON T1GCON `VEuc  1 e 1 @4044 ]
+[s S1606 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO_NOT_DONE 1 0 :1:3 
+]
+"14772
+[s S1609 . 1 `uc 1 T1GSS 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nDONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+[s S1617 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T1G_DONE 1 0 :1:3 
+]
+[s S1622 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO 1 0 :1:3 
+]
+[u S1625 . 1 `S1606 1 . 1 0 `S1609 1 . 1 0 `S1617 1 . 1 0 `S1622 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES1625  1 e 1 @4044 ]
+"14837
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S1556 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"14870
+[s S1559 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1SOSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[s S1566 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[s S1575 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+]
+[u S1578 . 1 `S1556 1 . 1 0 `S1559 1 . 1 0 `S1566 1 . 1 0 `S1575 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES1578  1 e 1 @4045 ]
+"14950
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"14957
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"14977
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S1380 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"15040
+[s S1382 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S1385 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S1388 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S1391 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S1394 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S1403 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S1409 . 1 `S1380 1 . 1 0 `S1382 1 . 1 0 `S1385 1 . 1 0 `S1388 1 . 1 0 `S1391 1 . 1 0 `S1394 1 . 1 0 `S1403 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1409  1 e 1 @4048 ]
+"15158
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"15215
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S34 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"16050
+[s S37 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S46 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S49 . 1 `S34 1 . 1 0 `S37 1 . 1 0 `S46 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES49  1 e 1 @4081 ]
+[s S69 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"16127
+[s S78 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S87 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S91 . 1 `S69 1 . 1 0 `S78 1 . 1 0 `S87 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES91  1 e 1 @4082 ]
+"18387
+[v _PLLRDY PLLRDY `VEb  1 e 0 @32407 ]
+"211 C:\Users\blane\MPLABXProjects\oled_test.X\font.c
+[v _Terminal11x16 Terminal11x16 `C[3128]uc  1 e 3128 0 ]
+"22 C:\Users\blane\MPLABXProjects\oled_test.X\main.c
+[v _recieve_buffer recieve_buffer `[245]uc  1 e 245 0 ]
+"25
+[v _capture capture `uc  1 e 1 0 ]
+"27
+[v _transmit transmit `uc  1 e 1 0 ]
+"31
+[v _bufferReady bufferReady `uc  1 e 1 0 ]
+[s S172 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"58 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _spi1_configuration spi1_configuration `C[1]S172  1 s 4 spi1_configuration ]
+"57 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"57 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr3.c
+[v _timer3ReloadVal timer3ReloadVal `VEus  1 e 2 0 ]
+"58
+[v _TMR3_InterruptHandler TMR3_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S374 . 1035 `uc 1 Contrast 1 0 `uc 1 FrameMemory 1 1 `uc 1 WrRam 1 2 `[1024]uc 1 Ram 1024 3 `us 1 X 2 1027 `us 1 Y 2 1029 `us 1 Cnt1 2 1031 `us 1 Cnt2 2 1033 ]
+"18 C:\Users\blane\MPLABXProjects\oled_test.X\oled.c
+[v _Display Display `S374  1 e 1035 0 ]
+[s S414 . 9 `uc 1 FirstCharacter 1 0 `uc 1 LastCharacter 1 1 `uc 1 Height 1 2 `uc 1 Width 1 3 `uc 1 LetterSpacing 1 4 `*.32Cuc 1 Ptr1 2 5 `*.32Cuc 1 Ptr2 2 7 ]
+"19
+[v _Font Font `S414  1 e 9 0 ]
+[s S422 . 4 `us 1 Height 2 0 `us 1 Width 2 2 ]
+"20
+[v _Image Image `S422  1 e 4 0 ]
+"21
+[v _Oled_InterruptHandler Oled_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S831 . 2 `VEus 1 Cnt 2 0 ]
+"10 C:\Users\blane\MPLABXProjects\oled_test.X\time_delay.c
+[v _TimerMs1 TimerMs1 `VES831  1 e 2 0 ]
+"36 C:\Users\blane\MPLABXProjects\oled_test.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"83
+} 0
+"50 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"61
+} 0
+"64 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr3.c
+[v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
+"172
+[v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 17 ]
+"174
+} 0
+"62 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"63 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"62 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0
+"55 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
+"63 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"75
+} 0
+"52 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"64 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/epwm2.c
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"90
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `us  1 p 2 17 ]
+"97
+} 0
+"171 C:\Users\blane\MPLABXProjects\oled_test.X\demo.c
+[v _DispTransmitting DispTransmitting `(v  1 e 1 0 ]
+{
+"245
+} 0
+"19
+[v _DispReceive DispReceive `(v  1 e 1 0 ]
+{
+"93
+} 0
+"247
+[v _DispReady DispReady `(v  1 e 1 0 ]
+{
+"321
+} 0
+"95
+[v _DispNothing DispNothing `(v  1 e 1 0 ]
+{
+"169
+} 0
+"72 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
+{
+[v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 p 1 wreg ]
+[v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 p 1 wreg ]
+"74
+[v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 p 1 18 ]
+"85
+} 0
+"252 C:\Users\blane\MPLABXProjects\oled_test.X\oled.c
+[v _Oled_TextCenter Oled_TextCenter `(v  1 e 1 0 ]
+{
+"253
+[v Oled_TextCenter@j j `us  1 a 2 21 ]
+[v Oled_TextCenter@i i `us  1 a 2 19 ]
+"252
+[v Oled_TextCenter@p p `*.32uc  1 p 2 10 ]
+[v Oled_TextCenter@x1 x1 `us  1 p 2 12 ]
+[v Oled_TextCenter@y1 y1 `us  1 p 2 14 ]
+[v Oled_TextCenter@x2 x2 `us  1 p 2 16 ]
+[v Oled_TextCenter@pixel_ pixel_ `uc  1 p 1 18 ]
+"277
+} 0
+"105
+[v _Oled_WriteChar Oled_WriteChar `(v  1 e 1 0 ]
+{
+[v Oled_WriteChar@c c `uc  1 p 1 wreg ]
+"106
+[v Oled_WriteChar@i i `us  1 a 2 8 ]
+[v Oled_WriteChar@j j `us  1 a 2 6 ]
+[v Oled_WriteChar@k k `us  1 a 2 4 ]
+"105
+[v Oled_WriteChar@c c `uc  1 p 1 wreg ]
+[v Oled_WriteChar@x x `us  1 p 2 54 ]
+[v Oled_WriteChar@y y `us  1 p 2 56 ]
+"107
+[v Oled_WriteChar@c c `uc  1 p 1 3 ]
+"154
+} 0
+"163
+[v _Oled_TextWidth Oled_TextWidth `(us  1 e 2 0 ]
+{
+"164
+[v Oled_TextWidth@text_width text_width `us  1 a 2 22 ]
+[v Oled_TextWidth@i i `us  1 a 2 20 ]
+"163
+[v Oled_TextWidth@p p `*.32uc  1 p 2 17 ]
+"178
+} 0
+"470
+[v _Oled_FillArea Oled_FillArea `(v  1 e 1 0 ]
+{
+"471
+[v Oled_FillArea@j j `us  1 a 2 56 ]
+[v Oled_FillArea@i i `us  1 a 2 54 ]
+"470
+[v Oled_FillArea@x1 x1 `us  1 p 2 0 ]
+[v Oled_FillArea@y1 y1 `us  1 p 2 2 ]
+[v Oled_FillArea@x2 x2 `us  1 p 2 4 ]
+[v Oled_FillArea@y2 y2 `us  1 p 2 6 ]
+[v Oled_FillArea@pixel_ pixel_ `uc  1 p 1 8 ]
+"490
+} 0
+"562
+[v _Oled_Pixel Oled_Pixel `(uc  1 e 1 0 ]
+{
+"563
+[v Oled_Pixel@i i `us  1 a 2 29 ]
+"562
+[v Oled_Pixel@x x `us  1 p 2 17 ]
+[v Oled_Pixel@y y `us  1 p 2 19 ]
+[v Oled_Pixel@pixel_ pixel_ `uc  1 p 1 21 ]
+"605
+} 0
+"88
+[v _Oled_SetFont Oled_SetFont `(v  1 e 1 0 ]
+{
+[v Oled_SetFont@p p `*.32Cuc  1 p 2 17 ]
+[v Oled_SetFont@letterspacing letterspacing `uc  1 p 1 19 ]
+"97
+} 0
+"29
+[v _Oled_Init Oled_Init `(v  1 e 1 0 ]
+{
+[v Oled_Init@frame_memory_ frame_memory_ `uc  1 p 1 wreg ]
+[v Oled_Init@frame_memory_ frame_memory_ `uc  1 p 1 wreg ]
+[v Oled_Init@frame_memory_ frame_memory_ `uc  1 p 1 58 ]
+"38
+} 0
+"766
+[v _Oled_Reset Oled_Reset `(v  1 e 1 0 ]
+{
+"771
+} 0
+"19 C:\Users\blane\MPLABXProjects\oled_test.X\time_delay.c
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+{
+"24
+[v Delay_ms@i i `ui  1 a 2 20 ]
+"19
+[v Delay_ms@count_ count_ `us  1 p 2 17 ]
+"31
+} 0
+"64 C:\Users\blane\MPLABXProjects\oled_test.X\oled.c
+[v _Oled_MemoryAccessControl Oled_MemoryAccessControl `(v  1 e 1 0 ]
+{
+[v Oled_MemoryAccessControl@frame_memory frame_memory `uc  1 p 1 wreg ]
+[v Oled_MemoryAccessControl@frame_memory frame_memory `uc  1 p 1 wreg ]
+[v Oled_MemoryAccessControl@frame_memory frame_memory `uc  1 p 1 17 ]
+"79
+} 0
+"451
+[v _Oled_FillScreen Oled_FillScreen `(v  1 e 1 0 ]
+{
+[v Oled_FillScreen@pattern pattern `uc  1 p 1 wreg ]
+"452
+[v Oled_FillScreen@k k `us  1 a 2 1 ]
+"451
+[v Oled_FillScreen@pattern pattern `uc  1 p 1 wreg ]
+"453
+[v Oled_FillScreen@pattern pattern `uc  1 p 1 0 ]
+"462
+} 0
+"610
+[v _Oled_WriteArea Oled_WriteArea `(v  1 e 1 0 ]
+{
+"611
+[v Oled_WriteArea@i i `us  1 a 2 52 ]
+[v Oled_WriteArea@j j `us  1 a 2 50 ]
+"612
+[v Oled_WriteArea@pag1 pag1 `us  1 a 2 48 ]
+[v Oled_WriteArea@pag2 pag2 `us  1 a 2 46 ]
+"610
+[v Oled_WriteArea@x1 x1 `us  1 p 2 36 ]
+[v Oled_WriteArea@y1 y1 `us  1 p 2 38 ]
+[v Oled_WriteArea@x2 x2 `us  1 p 2 40 ]
+[v Oled_WriteArea@y2 y2 `us  1 p 2 42 ]
+"726
+} 0
+"812
+[v _Oled_WritePage Oled_WritePage `(v  1 e 1 0 ]
+{
+"822
+[v Oled_WritePage@i i `us  1 a 2 34 ]
+"812
+[v Oled_WritePage@p p `*.39uc  1 p 2 26 ]
+[v Oled_WritePage@seg1 seg1 `us  1 p 2 28 ]
+[v Oled_WritePage@seg2 seg2 `us  1 p 2 30 ]
+[v Oled_WritePage@pag pag `us  1 p 2 32 ]
+"855
+} 0
+"113 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
+{
+"115
+[v SPI1_WriteBlock@data data `*.39uc  1 a 2 22 ]
+"113
+[v SPI1_WriteBlock@block block `*.39v  1 p 2 18 ]
+[v SPI1_WriteBlock@blockSize blockSize `ui  1 p 2 20 ]
+"120
+} 0
+"861 C:\Users\blane\MPLABXProjects\oled_test.X\oled.c
+[v _Oled_SetPointer Oled_SetPointer `(v  1 e 1 0 ]
+{
+[v Oled_SetPointer@seg seg `us  1 p 2 19 ]
+[v Oled_SetPointer@pag pag `us  1 p 2 21 ]
+"865
+} 0
+"885
+[v _Oled_Driver Oled_Driver `(v  1 e 1 0 ]
+{
+"933
+} 0
+"777
+[v _Oled_Command Oled_Command `(v  1 e 1 0 ]
+{
+[v Oled_Command@cmd cmd `uc  1 p 1 wreg ]
+[v Oled_Command@cmd cmd `uc  1 p 1 wreg ]
+"786
+[v Oled_Command@cmd cmd `uc  1 p 1 18 ]
+"806
+} 0
+"92 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/spi1.c
+[v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
+{
+[v SPI1_ExchangeByte@data data `uc  1 p 1 wreg ]
+[v SPI1_ExchangeByte@data data `uc  1 p 1 wreg ]
+"94
+[v SPI1_ExchangeByte@data data `uc  1 p 1 17 ]
+"98
+} 0
+"58 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"76
+} 0
+"158 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr3.c
+[v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
+{
+"169
+} 0
+"176
+[v _TMR3_DefaultInterruptHandler TMR3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"179
+} 0
+"98 C:\Users\blane\MPLABXProjects\oled_test.X\main.c
+[v _myTMR3ISR myTMR3ISR `(v  1 e 1 0 ]
+{
+"101
+[v myTMR3ISR@tmr3ISRstate tmr3ISRstate `E6161  1 s 1 tmr3ISRstate ]
+"102
+[v myTMR3ISR@sampleIndex sampleIndex `us  1 s 2 sampleIndex ]
+"103
+[v myTMR3ISR@bitIndex bitIndex `uc  1 s 1 bitIndex ]
+"104
+[v myTMR3ISR@byteIndex byteIndex `uc  1 s 1 byteIndex ]
+"231
+} 0
+"236
+[v _setSample setSample `(v  1 e 1 0 ]
+{
+"238
+[v setSample@byteIndex byteIndex `us  1 a 2 6 ]
+"239
+[v setSample@bitIndex bitIndex `uc  1 a 1 8 ]
+"236
+[v setSample@index index `us  1 p 2 0 ]
+[v setSample@value value `uc  1 p 1 2 ]
+"249
+} 0
+"252
+[v _sendSample sendSample `(v  1 e 1 0 ]
+{
+"256
+[v sendSample@bitValue bitValue `uc  1 a 1 10 ]
+"252
+[v sendSample@recieveBuffer recieveBuffer `*.39uc  1 p 2 4 ]
+[v sendSample@currentByte currentByte `uc  1 p 1 6 ]
+[v sendSample@currentBit currentBit `uc  1 p 1 7 ]
+"265
+} 0
+"90 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/epwm2.c
+[v i2_EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v i2EPWM2_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"97
+} 0
+"121 C:\Users\blane\MPLABXProjects\oled_test.X\mcc_generated_files/tmr3.c
+[v _TMR3_WriteTimer TMR3_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR3_WriteTimer@timerVal timerVal `us  1 p 2 8 ]
+"141
+} 0
+"105
+[v _TMR3_ReadTimer TMR3_ReadTimer `(us  1 e 2 0 ]
+{
+"107
+[v TMR3_ReadTimer@readVal readVal `us  1 a 2 4 ]
+"109
+[v TMR3_ReadTimer@readValLow readValLow `uc  1 a 1 7 ]
+"108
+[v TMR3_ReadTimer@readValHigh readValHigh `uc  1 a 1 6 ]
+"119
+} 0
