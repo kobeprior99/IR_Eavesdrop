@@ -235,8 +235,10 @@ void myTMR3ISR(void)
 // helper function to set the put the sample into the array
 void setSample(uint16_t index, uint8_t value)
 {
-    uint16_t byteIndex = index >> 3; // find the corresponding byte using bit shifts is faster than division operator (divide by 8)
-    uint8_t bitIndex = index & 7;    // index & 7 is like index % 8 which is faster for embedded system
+    //find the corresponding byte for the index
+    uint16_t byteIndex = index >> 3; //index >> 3equivalent to dividing by 8
+    //find the corresponding bit in the byte
+    uint8_t bitIndex = index & 7;    // index & 7 equivalent to modulo by 8
     // we create a unique bit mask depending on the the bit index
     if (value == 1)
     {
@@ -256,7 +258,7 @@ void sendSample(uint8_t recieveBuffer[], uint8_t currentByte, uint8_t currentBit
     uint8_t bitValue = (recieveBuffer[currentByte] >> currentBit) & 0x01;
     if (bitValue == 1)
     {
-        EPWM2_LoadDutyValue(IRLED_OFF); // turn LED OFF sSO DECODER GETS gets output 1
+        EPWM2_LoadDutyValue(IRLED_OFF); // turn LED OFF so DECODER GETS gets output 1
     }
     else
     {
